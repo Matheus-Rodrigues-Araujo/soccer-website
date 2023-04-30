@@ -1,0 +1,21 @@
+.newsidebar{
+  position: absolute;
+  height: 20vh;
+  width: 28vw;
+  display: flex;
+  flex-flow: column wrap;
+  background-color: var(--dark-color);
+  top: 98%;
+  right: 0px;
+  z-index: 1;
+}
+
+.newsidebar li{
+  background-color: var(--dark-color);
+}
+
+@media screen and (max-width:524px) {
+  .newsidebar{
+    width: 35vw;
+  }
+}
