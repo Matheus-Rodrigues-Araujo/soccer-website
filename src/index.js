@@ -8,7 +8,6 @@ import './index.css'
 import './styles/HomePage.css'
 import './styles/Navbar.css'
 import './styles/newsidebar.css'
-// import './styles/Sidebar.css'
 import './styles/Header.css'
 import './styles/NavigationList.css'
 import './styles/LoadingAnimation.css'
@@ -29,8 +28,8 @@ import App from './App'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode >
-    <HashRouter>
+    {/* <HashRouter> */}
       <App />
-    </HashRouter>
+    {/* </HashRouter> */}
   </React.StrictMode>
 )
