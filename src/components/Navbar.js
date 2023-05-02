@@ -1,76 +1,61 @@
-import { useState, useEffect } from 'react'
-import Sidebar from './Sidebar'
+import { Link } from "react-router-dom"
 
-const routes = [
-  {
-    page: 'Home',
-    path: '/'
-  },
-  {
-    page: 'About',
-    path: '/about'
-  },
-  {
-    page: 'Contact',
-    path: '/contact'
-  }
-]
+import iconsList from "./icons/icons"
+export const Navbar = () =>{
+  return(
+    <header className="bg-dark" >
+    <div className="px-3 py-4 text-bg-dark">
+      <div className="container">
+        <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <Link to="/" className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+          Sports{iconsList[0].svg}News
+          </Link>
 
-export default function Navbar() {
-  const [toggleClicked, setToggle] = useState(false)
-
-  useEffect(() => {
-    console.log('I re-rendered!')
-  })
-
-  return (
-    <header>
-      <nav className="navbar">
-        {/* Logo*/}
-        <a href="#!" className="logo">
-          BMW
-        </a>
-        {/* Navbar-list*/}
-        <ul className="navbar-list">
-          {/* Navbar-list-item */}
-          {routes.map(route => (
-            <li className="navbar-list-item" key={routes.indexOf(route)}>
-              <a href={route.path}>{route.page}</a>
+          <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+            
+            <li>
+              <Link to="/" className="nav-link text-white">
+                Home
+              </Link>
             </li>
-          ))}
-        </ul>
+            
+            <li>
+              <Link to="/content/leagues" className="nav-link text-white">
+                Leagues
+              </Link>
+            </li>
+            <li>
+              <Link to="/content/teams" className="nav-link text-white">
+                Teams
+              </Link>
+            </li>
+            <li>
+              <Link to="/content/players" className="nav-link text-white">
+                Players
+              </Link>
+            </li>
+            <li>
+              <Link to="/content/events" className="nav-link text-white">
+                Events
+              </Link>
+            </li>
+            <form className="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
 
-        <div
-          /*
-            toggleClicked === true:
-              classe 'toggle active' é ativada
-            toggleClicked === false
-              classe só fica com 'toggle'
-           */
-
-          className={toggleClicked ? 'toggle active' : 'toggle '}
-          onClick={() => {
-            // Alternar o valor de toggleClicked a cada clique
-            toggleClicked ? setToggle(false) : setToggle(true)
-          }}
-        >
-          <div></div>
-          <div></div>
-          <div></div>
+          <input type="search" className="form-control" placeholder="Search..." aria-label="Search" />
+        </form>
+          </ul>
         </div>
-      </nav>
-      <Sidebar
-        routes={routes}
-        sidebarActive={
-          /*
-            Se toggleClicked receber true,
-            então a sidebar-list vai receber um display flex
-            e será renderizada na tela
-          */
-          toggleClicked ? { display: 'flex' } : { display: 'none' }
-        }
-      />
-      {() => {}}
-    </header>
+      </div>
+    </div>
+    <div className="px-3 py-2 border-bottom mb-3">
+      <div className="container d-flex flex-wrap justify-content-center">
+        {/* <div className="text-end">
+          <button type="button" className="btn btn-light text-dark me-2">Login</button>
+          <button type="button" className="btn btn-primary">Sign-up</button>
+        </div> */}
+      </div>
+    </div>
+  </header>
   )
-}
+} 
+

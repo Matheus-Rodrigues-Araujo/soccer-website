@@ -1,35 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter} from 'react-router-dom'
 
-import { HashRouter} from 'react-router-dom'
 
-// CSS Files
-import './index.css'
-import './styles/HomePage.css'
-import './styles/Navbar.css'
-import './styles/newsidebar.css'
-import './styles/Header.css'
-import './styles/NavigationList.css'
-import './styles/LoadingAnimation.css'
-import './styles/PokemonList.css'
-import './styles/Footer.css'
-import './styles/SearchOptions.css'
-import './styles/PokemonCard.css'
-import './styles/BadgeType.css'
-import './styles/PokemonPage.css'
-
-// Component(s)
 import App from './App'
-
-// React-Router
-// import { HashRouter } from 'react-router-dom'
-// import { HashRouter} from 'react-router-dom'
+import { Footer } from './components/Footer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode >
-    {/* <HashRouter> */}
+    <BrowserRouter>
       <App />
-    {/* </HashRouter> */}
+      {/* <Footer/> */}
+    </BrowserRouter>
   </React.StrictMode>
 )

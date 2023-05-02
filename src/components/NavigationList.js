@@ -30,7 +30,6 @@ export default function NavigationList({routes}) {
       <ul>
         {routes.map(route => (
           <li key={route.name}>
-            {/* <a href={route.path}> {route.name} </a> */}
             <Link to={route.path} >{route.name}</Link>
           </li>
         ))}
