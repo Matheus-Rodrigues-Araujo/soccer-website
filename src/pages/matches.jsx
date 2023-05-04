@@ -1,5 +1,5 @@
 export const Events = () =>{
     return (
-        <h1>Events</h1>
+        <h1>Matches</h1>
     )
 }

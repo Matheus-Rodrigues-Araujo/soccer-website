@@ -8,7 +8,7 @@ export const Navbar = () =>{
       <div className="container">
         <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <Link to="/" className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-          Sports{iconsList[0].svg}News
+          Soccer{iconsList[0].svg}News
           </Link>
 
           <ul className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
@@ -35,8 +35,8 @@ export const Navbar = () =>{
               </Link>
             </li>
             <li>
-              <Link to="/content/events" className="nav-link text-white">
-                Events
+              <Link to="/content/matches" className="nav-link text-white">
+                Matches
               </Link>
             </li>
             <form className="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
