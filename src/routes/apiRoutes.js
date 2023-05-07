@@ -21,10 +21,4 @@ export const getLeagues = async () =>{
       }
 }
 
-
-
-
-// TEAMS
-// PLAYERS 
-// MATCHES
  
