@@ -14,3 +14,51 @@
   background-color: rgb(54, 59, 54);
   color: white;
 }
+
+body{
+  overflow-x: hidden;
+}
+
+.season-card{
+  cursor: pointer;
+  background-color: #212529;
+}
+
+.season-card:hover{
+  background-color: black;
+}
+
+.league-card{
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.league-card:hover{
+  background-color: rgb(57, 255, 44);
+  color: white;
+  font-weight: 700; 
+}
+
+
+thead{
+  background-color: rgb(57, 255, 44);
+  color: black;
+  font-weight: 700;
+}
+
+tbody tr{
+  cursor: pointer;
+  transition: .1s ease-in-out;
+}
+
+table caption{
+  color: black;
+  text-align: center;
+}
+
+tbody tr:hover{
+  background-color: black;
+  background-color: rgb(255, 255, 255);
+  color: black;
+
+}

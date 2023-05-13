@@ -20,22 +20,22 @@ export const Navbar = () =>{
             </li>
             
             <li>
-              <Link to="/content/leagues" className="nav-link text-white">
+              <Link to="leagues" className="nav-link text-white">
                 Leagues
               </Link>
             </li>
             <li>
-              <Link to="/content/teams" className="nav-link text-white">
+              <Link to="/teams" className="nav-link text-white">
                 Teams
               </Link>
             </li>
             <li>
-              <Link to="/content/players" className="nav-link text-white">
+              <Link to="players" className="nav-link text-white">
                 Players
               </Link>
             </li>
             <li>
-              <Link to="/content/matches" className="nav-link text-white">
+              <Link to="matches" className="nav-link text-white">
                 Matches
               </Link>
             </li>
@@ -58,4 +58,3 @@ export const Navbar = () =>{
   </header>
   )
 } 
-
