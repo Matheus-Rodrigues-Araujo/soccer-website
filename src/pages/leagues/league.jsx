@@ -40,11 +40,11 @@ export const League = () =>{
                 <div className="d-flex  align-items-center " >
                     <div style={{flex: 1}}>
                         <h3>{league.response[0]['league'].name}</h3>
-                        <img src={league.response[0]['league'].logo} alt="" style={{width:'40%', height:'auto', marginInline: 'auto', objectFit:'contain', objectPosition:'bottom'}} />
+                        <img src={league.response[0]['league'].logo} alt="" style={{width:'30%', height:'auto', marginInline: 'auto', objectFit:'contain', objectPosition:'bottom'}} />
                     </div>
                     <div style={{flex: 1}} >
                         <h3>{league.response[0]['country'].name && league.response[0]['country'].name } {league.response[0]['country'].code && ' - ' + league.response[0]['country'].code}  </h3>
-                        <img src={league.response[0]['country'].flag} alt="" style={{width:'30%', height:'auto', marginInline: 'auto', objectFit:'contain', objectPosition:'bottom'}} />
+                        <img src={league.response[0]['country'].flag} alt="" style={{width:'25%', height:'auto', marginInline: 'auto', objectFit:'contain', objectPosition:'bottom'}} />
 
                     </div>
                 </div>
