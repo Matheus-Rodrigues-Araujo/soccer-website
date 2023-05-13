@@ -15,6 +15,7 @@ const App = () =>{
             <Route index element={<Main/>} />
             <Route path="leagues"  element={<Leagues/>} />
             <Route path='leagues/:leagueId'  element={<League/>} />
+            <Route path="players" element={<Players/>} />
         </Route>
     
       </Routes>
