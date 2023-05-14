@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react';
+import { Spinner } from '../../components/spinner';
 
 export const Players = () =>{
     const [player, setPlayer] = useState([])
@@ -39,12 +40,12 @@ export const Players = () =>{
                 <img src={player.response[0]['statistics'][0].team.logo} alt='a team' />
 
             </div>
+
+            
         )
     }else{
         return (
-            <div class="spinner-border text-success" role="status">
-                <span class="visually-hidden">Loading...</span>
-            </div>
+            <Spinner/>
         )
     }
 }

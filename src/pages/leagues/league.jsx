@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router"
 import axios from 'axios'
 import { useEffect, useState } from "react"
 import { SeasonCard } from "../../components/cards/seasonsCard"
+import { Spinner } from "../../components/spinner"
 
 export const League = () =>{
     const [league, getLeague] = useState([])
@@ -79,7 +80,7 @@ export const League = () =>{
         )
     }else{
         return(
-            <h1>Loading...</h1>
+            <Spinner/>
         )
     }
 }
