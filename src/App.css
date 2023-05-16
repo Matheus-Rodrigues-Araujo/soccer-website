@@ -39,6 +39,22 @@ body{
   font-weight: 700; 
 }
 
+.team-card{
+  cursor: pointer;
+  background-color: #212529;
+
+  transition: .3s ease-in-out;
+  border: none;
+}
+
+.team-card:hover{  background-color: rgb(12, 71, 130);
+}
+
+.input-span{
+  /* background-color: rgb(57, 255, 44); */
+  font-size: 700;
+  color: rgb(57, 255, 44);
+}
 
 thead{
   background-color: rgb(57, 255, 44);

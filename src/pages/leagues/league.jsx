@@ -1,12 +1,13 @@
 import { useNavigate, useParams } from "react-router"
 import axios from 'axios'
 import { useEffect, useState } from "react"
-import { SeasonCard } from "../../components/cards/seasonsCard"
+import { SeasonCard } from "../../components/cards/table"
 import { Spinner } from "../../components/spinner"
 
 export const League = () =>{
     const [league, getLeague] = useState([])
-    let { leagueId } = useParams()
+    const [players, setPlayers] = useState([])
+    let { leagueId} = useParams()
     
     // const navigate = useNavigate()
 
@@ -29,9 +30,36 @@ export const League = () =>{
           }
     }
 
+    const getPlayers = async(id)=>{
+        const options = {
+            method: 'GET',
+            url: 'https://api-football-v1.p.rapidapi.com/v3/players',
+            params: {
+              league: leagueId,
+              season: '2020'
+            },
+            headers: {
+              'X-RapidAPI-Key': 'a44ca3f124mshf5256df877ee8a2p16ed0djsn312ab59cbb57',
+              'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
+            }
+          };
+          
+          try {
+              const response = await axios.request(options);
+              setPlayers(response.data);
+          } catch (error) {
+              console.error(error);
+          }
+    }
+
     useEffect(()=>{
         getLeagueData()
     }, [])
+
+
+    useEffect(()=>{
+        getPlayers()
+    },[])
 
 
     if(league.response){
@@ -49,6 +77,8 @@ export const League = () =>{
 
                     </div>
                 </div>
+
+                
 
                 <table class="table caption-top bg-dark text-white">
                     <caption className="fs-4">Seasons</caption>
@@ -70,6 +100,51 @@ export const League = () =>{
                                 <td>{e.current ? 'True' : 'False'}</td>
                                 </tr>
                         )))}
+                    
+                    
+                    
+                    </tbody>
+                </table>
+            
+             {/* Players */}
+
+                <table class="table caption-top bg-dark text-white">
+                    <caption className="fs-4">Players</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Team</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Lastname</th>
+                            <th scope="col">Age</th>
+                            <th scope="col">Nationality</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {
+                    
+                        players?.response ? players?.response.map((e, index)=>(    
+                            <tr>
+                                <th scope="row">{index+1}</th>
+                                <td><img src={e.statistics[0].team.logo} alt='team logo' style={{width:'35px'}} /> </td>
+                                <td>{e.player.name}</td>
+                                <td>{e.player.lastname}</td>
+                                <td>{e.player.age}</td>
+                                <td>{e.player.nationality}</td>
+                                {/* <td></td> */}
+                            </tr>
+                            
+                            )): (
+                            <tr>
+                                <th scope="row">None</th>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>None</td>
+                                <td>None</td>
+                                <td></td>
+                            </tr>)
+                    }
                     
                     
                     

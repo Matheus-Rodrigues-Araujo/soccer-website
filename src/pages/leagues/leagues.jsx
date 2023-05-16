@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react"
-import axios from 'axios';
+import { useContext, useEffect, useState } from "react"
+import axios, { all } from 'axios';
 import { LeagueCard } from "../../components/cards/leagueCard";
 import { Spinner } from "../../components/spinner";
+import { ThemeContext } from "../../App";
 
 export const Leagues = () =>{
-    const [leagues, setLeagues] = useState([])
+    const {leagues, setLeagues} = useContext(ThemeContext)
+    // const [leagues, setLeagues] = useState([])
     const getLeagues = async () =>{  
 
         const options = {
@@ -32,9 +34,9 @@ export const Leagues = () =>{
     if(leagues.response){
         return(
             <div>
-                <h1>Leagues</h1>
-                           
-                 <div className="row  py-4 gap-5" style={{justifyContent: 'center'}} >      
+                <h1 className="fs-1 text-danger" >Leagues</h1>
+                <h2 style={{color: 'grey'}} >Choose a league to explore!</h2>
+                 <div className="row border-top py-4 gap-5" style={{justifyContent: 'center'}} >      
                     {leagues.response && leagues.response.map(
                         e=>(<LeagueCard
                             id={e.league.id} 
